@@ -22,7 +22,7 @@ set(CMAKE_C_FLAGS "-g -Wall -m64 -nostdlib -ffreestanding -fno-pie -fno-stack-ch
 set(CMAKE_EXE_LINKER_FLAGS "-T${LINKER_SCRIPT}")
 
 add_executable(${BIN_NAME})
-target_include_directories(${BIN_NAME} PUBLIC limine)
+target_include_directories(${BIN_NAME} PUBLIC limine src/libc)
 
 add_subdirectory(src)
 
