@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Tau LANGUAGES ASM CXX C)
+project(Tau LANGUAGES ASM CXX C ASM_NASM)
 
 set(ASM "")
 set(LINKER_SCRIPT "${PROJECT_SOURCE_DIR}/linker.ld")
@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_FLAGS "-g -Wall -m64 -nostdlib -ffreestanding -fno-pie -fno-stack-check -mno-stack-arg-probe -fno-use-cxa-atexit -fno-builtin -fno-leading-underscore -fno-rtti -fno-exceptions -fno-stack-protector")
-set(CMAKE_C_FLAGS "-g -Wall -m64 -nostdlib -ffreestanding -fno-pie -fno-stack-check -mno-stack-arg-probe -fno-builtin -fno-leading-underscore -fno-exceptions -fno-stack-protector")
+set(CMAKE_C_FLAGS "-g -Wall -m64 -nostdlib -ffreestanding -fno-pie -fPIE -fno-stack-check -mno-stack-arg-probe -fno-builtin -fno-leading-underscore -fno-exceptions -fno-stack-protector")
 set(CMAKE_EXE_LINKER_FLAGS "-T${LINKER_SCRIPT}")
 
 add_executable(${BIN_NAME})
